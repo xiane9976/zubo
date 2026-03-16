@@ -10,6 +10,10 @@ from urllib.parse import urljoin
 URL_FILE = "https://raw.githubusercontent.com/kakaxi-1/zubo/main/ip_urls.txt"
 
 CHANNEL_CATEGORIES = {
+    "大湾区": [
+    "广州综合","广州新闻","广州影视","广州竞赛","广州法治","南国都市","广东珠江","广东体育","广东新闻","广东卫视",
+    "广东民生","广东影视","广东综艺","岭南戏曲","大湾区卫视","广东经济科教","广东九画面","佛山综合","广东卫视4K","广东综艺4K","南国都市4K"
+    ],
     "央视频道": [
         "CCTV1", "CCTV2", "CCTV3", "CCTV4", "CCTV4欧洲", "CCTV4美洲", "CCTV5", "CCTV5+", "CCTV6", "CCTV7",
         "CCTV8", "CCTV9", "CCTV10", "CCTV11", "CCTV12", "CCTV13", "CCTV14", "CCTV15", "CCTV16", "CCTV17",
@@ -43,7 +47,7 @@ CHANNEL_MAPPING = {
     "CCTV5": ["CCTV-5", "CCTV5-体育", "CCTV-5 体育", "CCTV-5体育", "CCTV5HD", "CCTV-5高清", "CCTV-5HD", "CCTV5体育", "CCTV5体育高清", "cctv5"],
     "CCTV5+": ["CCTV-5+", "CCTV5+体育赛事", "CCTV-5+ 体育赛事", "CCTV5+体育赛事", "CCTV5+HD", "CCTV-5+高清", "CCTV-5+HD", "cctv-5+HD", "CCTV5plas", "CCTV5+体育赛视高清", "cctv5+"],
     "CCTV6": ["CCTV-6", "CCTV6-电影", "CCTV-6 电影", "CCTV-6电影", "CCTV6HD", "CCTV-6高清", "CCTV-6HD", "cctv-6HD", "CCTV6电影高清", "cctv6"],
-    "CCTV7": ["CCTV-7", "CCTV7-军农", "CCTV-7 国防军事", "CCTV-7国防军事", "CCTV7HD", "CCTV-7高清", "CCTV-7HD", "CCTV7-国防军事", "CCTV7军事高清", "cctv7"],
+    "CCTV7": ["CCTV-7", "CCTV7-军农", "CCTV-7 国防军事", "CCTV-7国防军事", "CCTV7HD", "CCTV-7高清", "CCTV-7HD"， "CCTV7-国防军事", "CCTV7军事高清", "cctv7"],
     "CCTV8": ["CCTV-8", "CCTV8-电视剧", "CCTV-8 电视剧", "CCTV-8电视剧", "CCTV8HD", "CCTV-8高清", "CCTV-8HD", "cctv-8HD", "CCTV8电视剧高清", "cctv8"],
     "CCTV9": ["CCTV-9", "CCTV9-纪录", "CCTV-9 纪录", "CCTV-9纪录", "CCTV9HD", "cctv9HD", "CCTV-9高清", "cctv-9HD", "CCTV9记录高清", "cctv9"],
     "CCTV10": ["CCTV-10", "CCTV10-科教", "CCTV-10 科教", "CCTV-10科教", "CCTV10HD", "CCTV-10高清", "CCTV-10HD", "CCTV-10高清", "CCTV10科教高清", "cctv10"],
@@ -75,7 +79,7 @@ CHANNEL_MAPPING = {
     "山东教育卫视": ["山东教育"],
     "中国教育1台": ["CETV1", "中国教育一台", "中国教育1", "CETV", "CETV-1", "中国教育", "中国教育-1"],
     "中国教育2台": ["CETV2", "中国教育二台", "中国教育2", "CETV-2 空中课堂", "CETV-2", "中国教育-2"],
-    "中国教育3台": ["CETV3", "中国教育三台", "中国教育3", "CETV-3 教育服务", "CETV-3"],
+    "中国教育3台": ["CETV3"， "中国教育三台", "中国教育3", "CETV-3 教育服务", "CETV-3"],
     "中国教育4台": ["CETV4", "中国教育四台", "中国教育4", "中国教育电视台第四频道", "CETV-4"],
     "CHC动作电影": ["CHC动作电影高清", "动作电影"],
     "CHC家庭影院": ["CHC家庭电影高清", "家庭影院"],
@@ -89,7 +93,7 @@ CHANNEL_MAPPING = {
     "淘萌宠": ["IPTV淘萌宠", "北京IPTV萌宠TV", "北京淘萌宠"],
     "魅力足球": ["上海魅力足球"],
     "睛彩青少": ["睛彩羽毛球"],
-    "求索纪录": ["求索记录", "求索纪录4K", "求索记录4K", "求索纪录 4K", "求索记录 4K"],
+    "求索纪录": ["求索记录"， "求索纪录4K", "求索记录4K", "求索纪录 4K", "求索记录 4K"],
     "金鹰纪实": ["湖南金鹰纪实", "金鹰记实"],
     "纪实科教": ["北京纪实科教", "BRTV纪实科教", "北京纪实卫视高清"],
     "星空卫视": ["星空衛視", "星空衛视", "星空卫視"],
@@ -111,7 +115,7 @@ CHANNEL_MAPPING = {
     "武术世界": ["河南武术世界"],
     "乐游": ["乐游频道", "上海乐游频道", "乐游纪实", "SiTV乐游频道", "天天乐游"],
     "欢笑剧场": ["上海欢笑剧场4K", "欢笑剧场 4K", "欢笑剧场4K", "上海欢笑剧场"],
-    "生活时尚": ["生活时尚4K", "SiTV生活时尚", "上海生活时尚"],
+    "生活时尚": ["生活时尚4K"， "SiTV生活时尚", "上海生活时尚"],
     "都市剧场": ["都市剧场4K", "SiTV都市剧场", "上海都市剧场"],
     "游戏风云": ["游戏风云4K", "SiTV游戏风云", "上海游戏风云"],
     "金色学堂": ["金色学堂4K", "SiTV金色学堂", "上海金色学堂"],
@@ -153,7 +157,7 @@ async def generate_urls(url):
 
     json_paths = [
     "/iptv/live/1000.json?key=txiptv",
-    "/iptv/live/1001.json?key=txiptv",
+    "/iptv/live/1001.json?key=txiptv"，
 ]
 
     for i in range(1, 256):
