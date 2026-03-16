@@ -1,1 +1,3 @@
-
+*.txt text encoding=utf-8
+*.js text encoding=utf-8
+*.py text encoding=utf-8
